@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>View Order Detail</title>
+</head>
+<body>
+    <h1>View Order Detail</h1>
+    <p>Order ID: <span th:text="${orderDetail.order.id}">Order ID</span></p>
+    <p>Game: <a th:href="@{/games/view/{id}(id=${orderDetail.game.id})}" th:text="${orderDetail.game.title}">Game Title</a></p>
+    <p>Quantity: <span th:text="${orderDetail.quantity}">Quantity</span></p>
+    <a th:href="@{/orderdetails}">Back to List</a>
+</body>
+</html>

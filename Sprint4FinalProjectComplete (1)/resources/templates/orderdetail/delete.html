@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Delete Order Detail</title>
+</head>
+<body>
+    <h1>Delete Order Detail</h1>
+    <p>Are you sure you want to delete this order detail?</p>
+    <form action="#" th:action="@{/orderdetails/delete}" th:object="${orderDetail}" method="post">
+        <p>Order ID: <span th:text="${orderDetail.order.id}">Order ID</span></p>
+        <p>Game: <a th:href="@{/games/view/{id}(id=${orderDetail.game.id})}" th:text="${orderDetail.game.title}">Game Title</a></p>
+        <p>Quantity: <span th:text="${orderDetail.quantity}">Quantity</span></p>
+        <p><button type="submit">Delete</button></p>
+    </form>
+    <a th:href="@{/orderdetails}">Back to List</a>
+</body>
+</html>

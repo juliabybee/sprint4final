@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>View Game</title>
+</head>
+<body>
+    <h1>View Game</h1>
+    <p>Title: <span th:text="${game.title}">Title</span></p>
+    <p>Genre: <span th:text="${game.genre}">Genre</span></p>
+    <p>Price: <span th:text="${game.price}">Price</span></p>
+    <a th:href="@{/games}">Back to List</a>
+</body>
+</html>

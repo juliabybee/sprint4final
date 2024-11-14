@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>View Review</title>
+</head>
+<body>
+    <h1>View Review</h1>
+    <p>Game: <a th:href="@{/games/view/{id}(id=${review.game.id})}" th:text="${review.game.title}">Game Title</a></p>
+    <p>User: <span th:text="${review.user.name}">User</span></p>
+    <p>Rating: <span th:text="${review.rating}">Rating</span></p>
+    <p>Review Date: <span th:text="${review.reviewDate}">Review Date</span></p>
+    <p>Content: <span th:text="${review.content}">Content</span></p>
+    <a th:href="@{/reviews}">Back to List</a>
+</body>
+</html>

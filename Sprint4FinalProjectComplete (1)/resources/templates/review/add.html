@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Add/Edit Review</title>
+</head>
+<body>
+    <h1>Add/Edit Review</h1>
+    <form action="#" th:action="@{/reviews/add}" th:object="${review}" method="post">
+        <p>Game ID: <input type="text" th:field="*{game.id}" /></p>
+        <p>User ID: <input type="text" th:field="*{user.id}" /></p>
+        <p>Rating: <input type="number" th:field="*{rating}" min="1" max="5" /></p>
+        <p>Review Date: <input type="date" th:field="*{reviewDate}" /></p>
+        <p>Content: <textarea th:field="*{content}"></textarea></p>
+        <p><button type="submit">Save</button></p>
+    </form>
+    <a th:href="@{/reviews}">Back to List</a>
+</body>
+</html>

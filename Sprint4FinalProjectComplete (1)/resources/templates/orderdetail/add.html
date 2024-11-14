@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Add/Edit Order Detail</title>
+</head>
+<body>
+    <h1>Add/Edit Order Detail</h1>
+    <form action="#" th:action="@{/orderdetails/add}" th:object="${orderDetail}" method="post">
+        <p>Order ID: <input type="text" th:field="*{order.id}" /></p>
+        <p>Game ID: <input type="text" th:field="*{game.id}" /></p>
+        <p>Quantity: <input type="number" th:field="*{quantity}" /></p>
+        <p><button type="submit">Save</button></p>
+    </form>
+    <a th:href="@{/orderdetails}">Back to List</a>
+</body>
+</html>

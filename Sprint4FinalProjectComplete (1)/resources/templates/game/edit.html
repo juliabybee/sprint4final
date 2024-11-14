@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Edit Game</title>
+</head>
+<body>
+    <h1>Edit Game</h1>
+    <form th:action="@{/games/edit/{id}(id=${game.gameId})}" th:object="${game}" method="post">
+        <input type="hidden" th:field="*{gameId}" />
+        <p>Title: <input type="text" th:field="*{title}" /></p>
+        <p>Genre: <input type="text" th:field="*{genre}" /></p>
+        <p>Price: <input type="number" step="0.01" th:field="*{price}" /></p>
+        <p><button type="submit">Save</button></p>
+    </form>
+    <a th:href="@{/games}">Back to List</a>
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Review List</title>
+</head>
+<body>
+    <h1>Review List</h1>
+    <a th:href="@{/reviews/add}">Add New Review</a>
+    <table>
+        <thead>
+            <tr>
+                <th>Game</th>
+                <th>User</th>
+                <th>Rating</th>
+                <th>Review Date</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr th:each="review : ${reviews}">
+                <td>
+                    <a th:href="@{/games/view/{id}(id=${review.game.id})}" th:text="${review.game.title}">Game Title</a>
+                </td>
+                <td th:text="${review.user.name}">User</td>
+                <td th:text="${review.rating}">Rating</td>
+                <td th:text="${review.reviewDate}">Review Date</td>
+                <td>
+                    <a th:href="@{/reviews/view/{id}(id=${review.id})}">View</a>
+                    <a th:href="@{/reviews/edit/{id}(id=${review.id})}">Edit</a>
+                    <a th:href="@{/reviews/delete/{id}(id=${review.id})}">Delete</a>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <a th:href="@{/}">Back to Home</a>
+</body>
+</html>
